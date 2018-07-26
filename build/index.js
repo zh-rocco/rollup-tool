@@ -1,25 +1,24 @@
 const fs = require("fs");
 const path = require("path");
 const capitalize = require("lodash.capitalize");
-const rollup = require("rollup");
+const { rollup } = require("rollup");
 const resolve = require("rollup-plugin-node-resolve");
 const commonjs = require("rollup-plugin-commonjs");
 const babel = require("rollup-plugin-babel");
-const uglify = require("rollup-plugin-uglify");
+const { uglify } = require("rollup-plugin-uglify");
 
 const name = "rollup-tool";
 const version = process.env.VERSION || require("../package.json").version;
 
-const banner = `
- /*!
+const banner = ` /*!
   * ${name} v${version}
   * (c) ${new Date().getFullYear()} Rocco Mormont
   * @license MIT
-  */`;
+  */\n\n`;
 
 async function build() {
   try {
-    const bundle = await rollup.rollup({
+    const bundle = await rollup({
       input: path.resolve(__dirname, "../src/index.js"),
       plugins: [
         resolve(),

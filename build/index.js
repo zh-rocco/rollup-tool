@@ -20,7 +20,7 @@ const banner = `
 async function build() {
   try {
     const bundle = await rollup.rollup({
-      input: path.resolve(__dirname, "src/index.js"),
+      input: path.resolve(__dirname, "../src/index.js"),
       plugins: [
         resolve(),
         commonjs(),
@@ -36,7 +36,7 @@ async function build() {
 
     code = rewriteVersion(code);
 
-    await write(path.resolve(__dirname, `${name}.js`), code);
+    await write(path.resolve(__dirname, `../dist/${name}.js`), code);
 
     console.log(`${name}.js v${version} builded`);
   } catch (e) {

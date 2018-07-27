@@ -1,11 +1,15 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/env",
       {
-        "modules": false
+        "modules": false,
+        "targets": {
+          "browsers": ["last 2 versions", "not ie <= 8"]
+        },
+        "useBuiltIns": "usage"
       }
     ]
   ],
-  "plugins": ["external-helpers"]
+  "plugins": ["@babel/transform-runtime", "@babel/external-helpers"]
 }

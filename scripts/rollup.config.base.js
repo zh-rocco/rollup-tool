@@ -5,7 +5,7 @@ import { eslint } from "rollup-plugin-eslint";
 import babel from "rollup-plugin-babel";
 
 export default {
-  input: "src/index.js",
+  input: "lib/index.js",
   plugins: [
     replace({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development")

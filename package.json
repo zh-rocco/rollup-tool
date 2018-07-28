@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "npm run clean && cross-env NODE_ENV=development rollup -w -c scripts/rollup.config.dev.js",
     "build": "npm run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
+    "start": "npm run build",
     "release": "standard-version"
   },
   "files": [

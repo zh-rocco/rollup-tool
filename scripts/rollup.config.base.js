@@ -12,9 +12,9 @@ export default {
     }),
     resolve(),
     commonjs(),
-    // eslint({
-    //   include: ["src/**/*.js"]
-    // }),
+    eslint({
+      include: ["src/**/*.js"]
+    }),
     babel({
       runtimeHelpers: true,
       externalHelpers: true,

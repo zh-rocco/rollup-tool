@@ -4,13 +4,14 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
-    "start": "npm run build",
+    "dev": "rimraf dist && cross-env NODE_ENV=development rollup -c scripts/rollup.config.prod.js",
+    "build": "rimraf dist && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
     "release": "standard-version"
   },
   "files": [
-    "src/index.js"
+    "README.md",
+    "src",
+    "dist/*.js"
   ],
   "repository": {
     "type": "git",

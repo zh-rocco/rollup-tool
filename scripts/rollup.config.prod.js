@@ -22,22 +22,22 @@ export default [
         file: `dist/${name}.js`,
         format: "umd",
         name: capitalize(name),
-        banner
+        banner,
       },
       // cjs and esm version
       {
         file: `dist/${name}.cjs.js`,
         format: "cjs",
-        banner
+        banner,
       },
       // cjs and esm version
       {
         file: `dist/${name}.esm.js`,
         format: "es",
-        banner
-      }
+        banner,
+      },
     ],
-    plugins: [...BaseConfig.plugins, filesize()]
+    plugins: [...BaseConfig.plugins, filesize()],
   },
 
   // .min.js
@@ -48,19 +48,19 @@ export default [
       {
         file: `dist/${name}.min.js`,
         format: "umd",
-        name: capitalize(name)
-      }
+        name: capitalize(name),
+      },
     ],
     plugins: [
       ...BaseConfig.plugins,
       uglify(
         {
           compress: { drop_console: true },
-          output: { preamble: banner } // add banner
+          output: { preamble: banner }, // add banner
         },
-        minify
+        minify,
       ),
-      filesize()
-    ]
-  }
+      filesize(),
+    ],
+  },
 ];

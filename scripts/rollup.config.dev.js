@@ -11,7 +11,7 @@ export default {
       file: `dist/${name}.js`,
       format: "umd",
       name: capitalize(name),
-      sourcemap: true
-    }
-  ]
+      sourcemap: true,
+    },
+  ],
 };

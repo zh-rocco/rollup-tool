@@ -20,17 +20,12 @@ async function build() {
   try {
     const bundle = await rollup({
       input: path.resolve(__dirname, "../src/index.js"),
-      plugins: [
-        resolve(),
-        commonjs(),
-        babel({ runtimeHelpers: true }),
-        uglify()
-      ]
+      plugins: [resolve(), commonjs(), babel({ runtimeHelpers: true }), uglify()],
     });
 
     let { code } = await bundle.generate({
       format: "umd",
-      name: capitalize(name)
+      name: capitalize(name),
     });
 
     code = rewriteVersion(code);

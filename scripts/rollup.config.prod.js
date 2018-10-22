@@ -1,4 +1,3 @@
-import capitalize from "lodash.capitalize";
 import filesize from "rollup-plugin-filesize";
 import { uglify } from "rollup-plugin-uglify";
 import { minify } from "uglify-es";
@@ -21,7 +20,7 @@ export default [
       {
         file: `dist/${name}.js`,
         format: "umd",
-        name: capitalize(name),
+        name,
         banner,
       },
       // cjs and esm version
@@ -48,7 +47,7 @@ export default [
       {
         file: `dist/${name}.min.js`,
         format: "umd",
-        name: capitalize(name),
+        name,
       },
     ],
     plugins: [

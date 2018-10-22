@@ -1,5 +1,3 @@
-import capitalize from "lodash.capitalize";
-
 import BaseConfig from "./rollup.config.base";
 import { name } from "../package.json";
 
@@ -10,7 +8,7 @@ export default {
     {
       file: `dist/${name}.js`,
       format: "umd",
-      name: capitalize(name),
+      name,
       sourcemap: true,
     },
   ],
